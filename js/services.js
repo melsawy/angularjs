@@ -1,0 +1,33 @@
+
+'use strict';
+
+define(['angular',Drupal.settings.custom_modules + '/angularjs/js/helpers/links.js'], function (angular,links) {
+	
+	/* Services */
+	angular.module('myapp.services', [])
+        /***** User Service *****/
+        .service('User_Service', ['$http', function ($http) {
+            /**
+             * get token
+             *
+             * @returns {HttpPromise}
+             */
+            this.token = function () {
+                return $http.get(links.token());
+            };
+
+            /**
+             * get current user
+             *
+             * @returns {HttpPromise}
+             */
+            this.users = function () {
+                return $http.get(links.users());
+            }
+        }])
+
+});
+
+
+
+

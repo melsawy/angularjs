@@ -5,4 +5,39 @@
  * Implements an AngularJS-driven.
  */
 
+function angularjs_page_alter(&$page) {
+  // Ddd some important js variables.
+  drupal_add_js(array(
+    'custom_modules' => '/sites/all/modules/custom',
+  ), 'setting');
+}
 
+/**
+ * Implements hook_block_info().
+ */
+function angularjs_block_info() {
+  $blocks['angularjs_menu'] = array(
+    'info' => t('Angular Menu'),
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function angularjs_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+    case 'angularjs_menu':
+      $block['subject'] = t('Angular menu');
+      $items = array();
+
+      $items[] = '<a href="/#/home">Home</a>';
+      $items[] = '<a href="/#/list_users">Users</a>';
+      $items[] = '<a href="/#/list_nodes">Nodes</a>';
+
+      $block['content'] = theme('item_list', array('items' => $items));
+      break;
+  }
+  return $block;
+}

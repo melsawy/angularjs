@@ -1,9 +1,14 @@
 define([
     'angular',
     'angularBootstrap',
-    'angularUi'
-], function (angular) {
+    'angularUi',
+    'services'
+], function (angular, services) {
 
-    return angular.module('myapp', ['ui.bootstrap','ui.router'])
+    return angular.module('myapp', [
+        'ui.bootstrap',
+        'ui.router',
+        'myapp.services'
+    ])
 
 });

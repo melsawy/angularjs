@@ -8,7 +8,8 @@ require.config({
         mainController: 'modules/custom/angularjs/controllers/mainController',
         homeController: 'modules/custom/angularjs/controllers/homeController',
         listUsersController: 'modules/custom/angularjs/controllers/listUsersController',
-        listNodesController: 'modules/custom/angularjs/controllers/listNodesController'
+        listNodesController: 'modules/custom/angularjs/controllers/listNodesController',
+        services: 'modules/custom/angularjs/js/services'
     },
     shim: {
         'angular' : {'exports' : 'angular'},
@@ -38,7 +39,8 @@ require( [
     'mainController',
     'homeController',
     'listUsersController',
-    'listNodesController'
+    'listNodesController',
+    'services'
 ],function (angular, app, routes) {
     angular.element(document).ready(function () {
         angular.bootstrap(document, ['myapp']);
