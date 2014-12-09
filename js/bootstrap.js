@@ -7,11 +7,13 @@ require.config({
         angularUi: 'libraries/angular-ui-router',
         mainController: 'modules/custom/angularjs/controllers/mainController',
         homeController: 'modules/custom/angularjs/controllers/homeController',
+        listNodesController: 'modules/custom/angularjs/controllers/listNodesController'
     },
     shim: {
         'angular' : {'exports' : 'angular'},
         'mainController' :['angular','app'],
         'homeController': ['angular','app'],
+        'listNodesController': ['angular','app'],
         'angularBootstrap': {
             deps:['angular'],
             'exports':'angular.bootstrap'
@@ -32,7 +34,8 @@ require( [
     'app',
     '/sites/all/modules/custom/angularjs/js/route.js',
     'mainController',
-    'homeController'
+    'homeController',
+    'listNodesController'
 ],function (angular, app, routes) {
     angular.element(document).ready(function () {
         angular.bootstrap(document, ['myapp']);
