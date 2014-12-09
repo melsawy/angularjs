@@ -4,6 +4,7 @@ require.config({
         angular : 'libraries/angular.min',
         app : 'modules/custom/angularjs/js/app',
         angularBootstrap : 'libraries/ui-bootstrap-tpls-0.12.0.min',
+        angularUi: 'libraries/angular-ui-router',
         mainController: 'modules/custom/angularjs/controllers/mainController'
     },
     shim: {
@@ -12,6 +13,10 @@ require.config({
         'angularBootstrap': {
             deps:['angular'],
             'exports':'angular.bootstrap'
+        },
+        'angularUi': {
+            deps:['angular'],
+            'exports':'angular.ui'
         }
     },
     priority: [
@@ -25,8 +30,6 @@ require( [
     'app',
     'mainController',
 ],function (angular, app, routes) {
-    var $html = angular.element(document.getElementsByTagName('html')[0]);
-
     angular.element(document).ready(function () {
         angular.bootstrap(document, ['myapp']);
     });

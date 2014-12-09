@@ -1,8 +1,9 @@
 define([
     'angular',
-    'angularBootstrap'
+    'angularBootstrap',
+    'angularUi'
 ], function (angular) {
 
-    return angular.module('myapp', ['ui.bootstrap'])
+    return angular.module('myapp', ['ui.bootstrap','ui.router'])
 
 });
