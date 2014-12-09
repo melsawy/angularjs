@@ -6,7 +6,7 @@ define(['angular', 'app'], function(angular, app) {
         $stateProvider.state('home', {
             url: '/home',
             templateUrl: '/sites/all/modules/custom/angularjs/templates/home.html',
-            controller: 'Home_Controller'
+            controller: 'homeController'
         });
         /**** Invalid routes redirection ****/
         $urlRouterProvider.otherwise('/home');
