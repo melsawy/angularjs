@@ -28,8 +28,10 @@ define([],function(){
         },
         users:function(){
             return this.baseUrl+'api/user.json';
+        },
+        nodes:function(){
+            return this.baseUrl+'api/node.json';
         }
-
 
     }
 });

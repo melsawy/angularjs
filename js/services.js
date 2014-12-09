@@ -26,6 +26,27 @@ define(['angular',Drupal.settings.custom_modules + '/angularjs/js/helpers/links.
             }
         }])
 
+        /***** Node Service *****/
+        .service('Node_Service', ['$http', function ($http) {
+            /**
+             * get token
+             *
+             * @returns {HttpPromise}
+             */
+            this.token = function () {
+                return $http.get(links.token());
+            };
+
+            /**
+             * get current user
+             *
+             * @returns {HttpPromise}
+             */
+            this.nodes = function () {
+                return $http.get(links.nodes());
+            }
+        }])
+
 });
 
 
