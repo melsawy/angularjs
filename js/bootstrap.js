@@ -28,6 +28,7 @@ require.config({
 require( [
     'angular',
     'app',
+    '/sites/all/modules/custom/angularjs/js/route.js',
     'mainController',
 ],function (angular, app, routes) {
     angular.element(document).ready(function () {
